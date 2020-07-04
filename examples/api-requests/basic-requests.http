@@ -1,0 +1,60 @@
+@url = https://v203h59a2e.execute-api.us-east-1.amazonaws.com
+@stage = v1
+@id = d1c3b7c6-15eb-4d6e-b8eb-b88fc301a749
+
+########################################################################################
+###
+### GET
+### Get all todos
+###
+########################################################################################
+GET {{url}}/{{stage}}/todo
+
+
+########################################################################################
+###
+### POST
+### Create new todo
+### Body:
+###  name - {string} - Name of new todo item
+###  tag - {string} - Tag for todo item
+###  summary - {string} - Summary of todo item
+########################################################################################
+POST {{url}}/{{stage}}/todo
+Content-Type: application/json
+
+{
+    "name": "Create xby2do API",
+    "tag": "xby2do",
+    "summary": "Create the new xby2do API using a DynamoDB table, AWS Lambda, and AWS API Gateway"
+}
+
+
+########################################################################################
+###
+### GET
+###  Get todo based on ID in route
+### Route:
+###  id - {string} - Guid of todo item
+########################################################################################
+GET {{url}}/{{stage}}/todo/{{id}}
+
+
+########################################################################################
+###
+### PUT
+### Create new todo
+### Body:
+###  name - {string} - Name of new todo item
+###  tag - {string} - Tag for todo item
+###  summary - {string} - Summary of todo item
+###  dueDate - {string} - Due date for todo item
+###  done - {string} - Mark todo as 'done'. Values "true" or "false" only
+########################################################################################
+PUT {{url}}/{{stage}}/todo/{{id}}
+Content-Type: application/json
+
+{
+    "dueDate": "2020-07-08",
+    "done": "true"
+}
