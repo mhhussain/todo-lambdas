@@ -17,7 +17,7 @@ exports.handler = function (event, context, callback) {
         M: {
           name: { S: event.name ? event.name : "" },
           summary: { S: event.summary ? event.summary : "" },
-          dueDate: { S: "" },
+          dueDate: { S: event.dueDate ? event.dueDate : "" },
           done: { BOOL: false },
         },
       },
