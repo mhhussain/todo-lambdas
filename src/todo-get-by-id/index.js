@@ -1,6 +1,6 @@
 let AWS = require("aws-sdk");
 
-let tablename = "todo";
+let tablename = process.env.TODO_DDB;
 
 let ddb = new AWS.DynamoDB();
 

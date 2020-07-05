@@ -1,7 +1,7 @@
 let AWS = require("aws-sdk");
 let moment = require("moment");
 
-let tablename = "todo";
+let tablename = process.env.TODO_DDB;
 
 let ddb = new AWS.DynamoDB({ apiVersion: "2012-08-10" });
 
