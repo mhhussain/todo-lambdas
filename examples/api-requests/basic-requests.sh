@@ -1,6 +1,6 @@
-@url = https://v203h59a2e.execute-api.us-east-1.amazonaws.com
-@stage = v1
-@id = 75654739-f2e7-4957-8e72-83abb88926e0
+URL = https://v203h59a2e.execute-api.us-east-1.amazonaws.com
+STAGE = v1
+ID = 75654739-f2e7-4957-8e72-83abb88926e0
 
 ########################################################################################
 ###
@@ -8,7 +8,7 @@
 ### Get all todos
 ###
 ########################################################################################
-GET {{url}}/{{stage}}/todo
+curl -X GET $URL/$STAGE/todo
 
 
 ########################################################################################
@@ -20,14 +20,7 @@ GET {{url}}/{{stage}}/todo
 ###  tag - {string} - Tag for todo item
 ###  summary - {string} - Summary of todo item
 ########################################################################################
-POST {{url}}/{{stage}}/todo
-Content-Type: application/json
-
-{
-    "name": "Test environment configs",
-    "tag": "xby2do",
-    "summary": "Change lambdas to use environment variables for ddb tablename"
-}
+curl -X POST -H 'Content-type: application/json' -d '{"name":"Test curl commands","tag":"xby2do","summary":"Create a basic test script with curl commands"}' $URL/$STAGE/todo
 
 
 ########################################################################################
@@ -37,7 +30,7 @@ Content-Type: application/json
 ### Route:
 ###  id - {string} - Guid of todo item
 ########################################################################################
-GET {{url}}/{{stage}}/todo/{{id}}
+curl -X GET $URL/$STAGE/todo/$ID
 
 
 ########################################################################################
@@ -51,10 +44,4 @@ GET {{url}}/{{stage}}/todo/{{id}}
 ###  dueDate - {string} - Due date for todo item
 ###  done - {string} - Mark todo as 'done'. Values "true" or "false" only
 ########################################################################################
-PUT {{url}}/{{stage}}/todo/{{id}}
-Content-Type: application/json
-
-{
-    "dueDate": "2020-07-08",
-    "done": "true"
-}
+curl -X PUT -H 'Content-type: application/json' -d '{"dueDate":"2020-07-08","done":"true"}' $URL/$STAGE/todo/$ID
