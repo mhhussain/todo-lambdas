@@ -1,6 +1,6 @@
-@url = https://v203h59a2e.execute-api.us-east-1.amazonaws.com
+@url = 
 @stage = v1
-@id = 75654739-f2e7-4957-8e72-83abb88926e0
+@id = aa
 
 ########################################################################################
 ###
@@ -24,9 +24,9 @@ POST {{url}}/{{stage}}/todo
 Content-Type: application/json
 
 {
-    "name": "Test environment configs",
+    "name": "Mohammed - create tasks for everyone",
     "tag": "xby2do",
-    "summary": "Change lambdas to use environment variables for ddb tablename"
+    "summary": "Create tasks for everyone to go through aws setup instructions."
 }
 
 
@@ -51,10 +51,10 @@ GET {{url}}/{{stage}}/todo/{{id}}
 ###  dueDate - {string} - Due date for todo item
 ###  done - {string} - Mark todo as 'done'. Values "true" or "false" only
 ########################################################################################
-PUT {{url}}/{{stage}}/todo/{{id}}
+PATCH {{url}}/{{stage}}/todo/{{id}}
 Content-Type: application/json
 
 {
-    "dueDate": "2020-07-08",
+    "dueDate": "2020-07-10",
     "done": "true"
 }

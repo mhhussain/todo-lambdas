@@ -1,6 +1,6 @@
-URL = https://v203h59a2e.execute-api.us-east-1.amazonaws.com
+URL = https://
 STAGE = v1
-ID = 75654739-f2e7-4957-8e72-83abb88926e0
+ID = aa
 
 ########################################################################################
 ###
@@ -35,7 +35,7 @@ curl -X GET $URL/$STAGE/todo/$ID
 
 ########################################################################################
 ###
-### PUT
+### PATCH
 ### Create new todo
 ### Body:
 ###  name - {string} - Name of new todo item
@@ -44,4 +44,4 @@ curl -X GET $URL/$STAGE/todo/$ID
 ###  dueDate - {string} - Due date for todo item
 ###  done - {string} - Mark todo as 'done'. Values "true" or "false" only
 ########################################################################################
-curl -X PUT -H 'Content-type: application/json' -d '{"dueDate":"2020-07-08","done":"true"}' $URL/$STAGE/todo/$ID
+curl -X PATCH -H 'Content-type: application/json' -d '{"dueDate":"2020-07-08","done":"true"}' $URL/$STAGE/todo/$ID
